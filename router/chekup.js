@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 
-// call model for member
+// call model for chekup
 const chekup = require("../models/index").chekup
 
 // *** call auth ***
@@ -16,7 +16,7 @@ const chekup = require("../models/index").chekup
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// end-point akses data member dg method GET
+// end-point akses data chekup dg method GET
 app.get("/", async(req, res) => {
     chekup.findAll()
         .then(result => {
